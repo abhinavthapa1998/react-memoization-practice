@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import "./styles.css";
 
 const Block = (change) => {
@@ -10,13 +10,15 @@ const Block = (change) => {
   );
 };
 
+const MemoizedBlock = memo(Block);
+
 export default function App() {
   const [change, setChange] = useState({ val: false });
   return (
     <div className="App">
       <h2>React Memoization Practice</h2>
       <button onClick={() => setChange({ val: true })}>SET</button>
-      <Block change={change} />
+      <MemoizedBlock change={change} />
     </div>
   );
 }
