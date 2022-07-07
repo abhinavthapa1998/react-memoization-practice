@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import "./styles.css";
 
 const Block = ({ changeObject }) => {
@@ -29,9 +29,9 @@ export default function App() {
       val: value
     };
   }
-  const handler = () => {
+  const handler = useCallback(() => {
     console.log(change);
-  };
+  }, [dummy]);
   return (
     <div className="App">
       <h2>React Memoization Practice</h2>
