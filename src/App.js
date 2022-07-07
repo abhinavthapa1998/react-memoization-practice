@@ -37,12 +37,9 @@ export default function App() {
       <h2>React Memoization Practice</h2>
       <button onClick={() => setChange(true)}>SET</button>
       <button onClick={() => setChange(!change)}>TOGGLE</button>
-      <Block
-        changeObject={memoizedResult}
-        // handler={handler}
-      />
-      <SmallBlock />
-      {/* <MemoizedSmall/> */}
+      <Block changeObject={memoizedResult} handler={handler} />
+      {/* <SmallBlock /> */}
+      <MemoizedSmall />
     </div>
   );
 }
