@@ -1,9 +1,21 @@
+import { useState } from "react";
 import "./styles.css";
 
+const Block = (change) => {
+  return (
+    <div
+      style={{ width: 300, height: 300, background: change ? "red" : "blue" }}
+    ></div>
+  );
+};
+
 export default function App() {
+  const [change, setChange] = useState(false);
   return (
     <div className="App">
       <h2>React Memoization Practice</h2>
+      <button onClick={() => setChange(false)}>SET</button>
+      <Block change={change} />
     </div>
   );
 }
