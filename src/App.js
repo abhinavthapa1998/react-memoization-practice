@@ -11,11 +11,11 @@ const Block = (change) => {
 };
 
 export default function App() {
-  const [change, setChange] = useState(false);
+  const [change, setChange] = useState({ val: false });
   return (
     <div className="App">
       <h2>React Memoization Practice</h2>
-      <button onClick={() => setChange(false)}>SET</button>
+      <button onClick={() => setChange({ val: true })}>SET</button>
       <Block change={change} />
     </div>
   );
