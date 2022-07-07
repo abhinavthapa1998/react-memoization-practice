@@ -16,17 +16,23 @@ const MemoizedBlock = memo(Block);
 
 export default function App() {
   const [change, setChange] = useState(false);
-  function assign() {
+  // const [changeObject, setChangeObject] = useState({ val: false });
+  const memoizedResult = useMemo(() => {
+    return assign(change);
+  }, [change]);
+
+  function assign(value) {
     return {
-      val: change
+      val: value
     };
   }
-  const changeObject = useMemo(assign, [change]);
+
   return (
     <div className="App">
       <h2>React Memoization Practice</h2>
       <button onClick={() => setChange(true)}>SET</button>
-      <MemoizedBlock changeObject={changeObject} />
+      <button onClick={() => setChange(!change)}>TOGGLE</button>
+      <MemoizedBlock changeObject={memoizedResult} />
     </div>
   );
 }
