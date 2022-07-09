@@ -1,2 +1,2 @@
-# react-memoization-practice
-Created with CodeSandbox
+# React Memoization and Optimization
+### Different commits have different cases
